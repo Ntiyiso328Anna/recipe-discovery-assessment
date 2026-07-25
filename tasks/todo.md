@@ -1,6 +1,6 @@
 # Technical assessment checklist
 
-## Stage 1 — Foundation
+## Stage 1 - Foundation
 
 - [x] Inspect the existing workspace and Git state.
 - [x] Confirm Vue 3, Vite, Vue Router and Pinia are available.
@@ -10,24 +10,23 @@
 - [x] Add reusable loading, empty and error state components.
 - [x] Verify the development command and production build.
 
-## Stage 2 — Routing and data integration
+## Stage 2 - Recipe listing screen
 
-- [ ] Connect the listing view to the service-backed store.
+- [x] Connect the listing route to the service-backed Pinia store.
+- [x] Build reusable header, metadata, card and navigation components.
+- [x] Render loading, empty and error states in the listing route.
+- [x] Link recipe cards to `/recipes/:id`.
+- [x] Match the Figma home layout for mobile and centred desktop presentation.
+
+## Stage 3 - Recipe detail screen
+
 - [ ] Connect the detail view to the selected recipe state.
-- [ ] Render loading, empty and error states in both routes.
-- [ ] Confirm navigation and direct-link route behaviour.
-
-## Stage 3 — Figma implementation
-
-- [ ] Match the home/listing screen at mobile size.
 - [ ] Match the recipe detail ingredients screen.
 - [ ] Match the recipe detail instructions state.
-- [ ] Apply the supplied Sofia Pro font assets.
-- [ ] Add responsive desktop behaviour without changing the mobile design intent.
-- [ ] Check keyboard, focus and image alternative text behaviour.
 
-## Stage 4 — Completion
+## Stage 4 - Completion
 
 - [ ] Update the README with setup, architecture, routes, store and CORS proxy details.
+- [ ] Review keyboard, focus and image alternative text behaviour.
 - [ ] Run a production build.
 - [ ] Review Git status and commit the assessment changes.

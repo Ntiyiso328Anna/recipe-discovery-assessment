@@ -1,22 +1,49 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
-import { useRecipeStore } from '../stores/recipes'
-import RecipeCard from '../components/RecipeCard.vue'
+import AppHeader from '../components/AppHeader.vue'
 import BottomNav from '../components/BottomNav.vue'
+import EmptyState from '../components/EmptyState.vue'
+import ErrorState from '../components/ErrorState.vue'
+import LoadingState from '../components/LoadingState.vue'
+import RecipeCard from '../components/RecipeCard.vue'
+import { useRecipeStore } from '../stores/recipes'
+import './home.css'
 
 const store = useRecipeStore()
-const selected = ref('Breakfast')
+const selectedCategory = ref('Breakfast')
 const categories = ['Breakfast', 'Lunch', 'Dinner']
-onMounted(store.loadRecipes)
 const recipes = computed(() => store.recipes)
+const featuredRecipes = computed(() => recipes.value.slice(0, 2))
+
+onMounted(() => store.loadRecipes())
 </script>
 
 <template>
-  <section class="home-view">
-    <header class="home-header"><p>&#9728; Good Morning</p><h1>Alena Sabyan</h1><button aria-label="Cart">&#128722;</button></header>
-    <section class="featured"><div class="section-title"><h2>Featured</h2><a href="#featured">See All</a></div><div class="feature-scroll"><article class="feature-card coral"><b>Asian white noodle<br>with sesame sauce</b><span>&#9201; 25 mins &nbsp; &#9679; Easy</span></article><article class="feature-card teal"><b>Healthy food<br>with fresh ingredients</b><span>&#9201; 20 mins &nbsp; &#9679; Easy</span></article></div></section>
-    <section><div class="section-title"><h2>Category</h2><a href="#category">See All</a></div><div class="chips"><button v-for="category in categories" :key="category" :class="{ selected: selected === category }" @click="selected = category">{{ category }}</button></div></section>
-    <section class="popular"><div class="section-title"><h2>Popular Recipes</h2><a href="#popular">See All</a></div><div v-if="store.loading" class="loading">Finding recipes...</div><div class="popular-grid"><RecipeCard v-for="recipe in recipes.slice(0, 2)" :key="recipe.id" :recipe="recipe" /></div></section>
+  <main class="home-view">
+    <AppHeader />
+    <section class="home-section" aria-labelledby="featured-heading">
+      <div class="home-section__heading"><h2 id="featured-heading">Featured</h2><button type="button">See All</button></div>
+      <div class="featured-list">
+        <article v-for="recipe in featuredRecipes" :key="recipe.id" class="featured-card">
+          <img :src="recipe.images?.find((image) => image.mime === 'image/webp')?.url || recipe.images?.[0]?.url" :alt="recipe.title" />
+          <div class="featured-card__shade"></div>
+          <div class="featured-card__content"><h3>{{ recipe.title }}</h3><span>◷ {{ recipe.meta?.cooking_time ? `${Math.round(recipe.meta.cooking_time / 60)} Min` : '' }}</span></div>
+        </article>
+      </div>
+    </section>
+    <section class="home-section" aria-labelledby="category-heading">
+      <div class="home-section__heading"><h2 id="category-heading">Category</h2><button type="button">See All</button></div>
+      <div class="category-list" aria-label="Recipe categories">
+        <button v-for="category in categories" :key="category" :class="{ 'is-selected': selectedCategory === category }" type="button" @click="selectedCategory = category">{{ category }}</button>
+      </div>
+    </section>
+    <section class="home-section popular-section" aria-labelledby="popular-heading">
+      <div class="home-section__heading"><h2 id="popular-heading">Popular Recipes</h2><button type="button">See All</button></div>
+      <LoadingState v-if="store.loading" />
+      <ErrorState v-else-if="store.error" :message="store.error" @retry="store.loadRecipes" />
+      <EmptyState v-else-if="recipes.length === 0" />
+      <div v-else class="popular-grid"><RecipeCard v-for="recipe in recipes.slice(0, 2)" :key="recipe.id" :recipe="recipe" /></div>
+    </section>
     <BottomNav />
-  </section>
+  </main>
 </template>
