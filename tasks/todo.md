@@ -20,13 +20,14 @@
 
 ## Stage 3 - Recipe detail screen
 
-- [ ] Connect the detail view to the selected recipe state.
-- [ ] Match the recipe detail ingredients screen.
-- [ ] Match the recipe detail instructions state.
+- [x] Fetch the selected recipe through the route ID and Pinia store.
+- [x] Build reusable hero, back button, nutrition, ingredient and method components.
+- [x] Add loading, error and not-found states.
+- [x] Match the Figma ingredient and instruction states.
+- [x] Preserve the listing screen and support direct detail URLs.
 
 ## Stage 4 - Completion
 
-- [ ] Update the README with setup, architecture, routes, store and CORS proxy details.
 - [ ] Review keyboard, focus and image alternative text behaviour.
-- [ ] Run a production build.
+- [ ] Run a final production build.
 - [ ] Review Git status and commit the assessment changes.
