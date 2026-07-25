@@ -1,6 +1,6 @@
 <script setup>
 defineProps({ recipe: { type: Object, required: true }, compact: Boolean })
-const cover = (recipe) => recipe.images?.[0]?.url
+const cover = (recipe) => recipe.images?.find((image) => image.mime === 'image/webp')?.url || recipe.images?.[0]?.url
 </script>
 
 <template>
