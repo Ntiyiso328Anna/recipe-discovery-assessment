@@ -1,6 +1,6 @@
 # Recipe discovery assessment
 
-A Vue 3 implementation of the supplied recipe discovery screens.
+A Vue 3 recipe discovery assessment built with Vite, Vue Router and Pinia.
 
 ## Run locally
 
@@ -14,7 +14,16 @@ Open the local URL printed by Vite. The two routes are:
 - `/` – recipe discovery/home
 - `/recipes/1` – recipe detail
 
-The Pinia store requests the supplied Afrihost endpoints. When the browser blocks those requests because of CORS, it displays the supplied recipe data as a graceful fallback, so the screens remain usable without a browser extension.
+## Architecture
+
+- `src/router` contains the listing and recipe-detail routes.
+- `src/stores/recipes.js` manages recipes, the selected recipe, loading and error state.
+- `src/services/recipesApi.js` is the single boundary for recipe API requests.
+- `src/components` contains reusable UI components and async state components.
+
+## CORS in development
+
+The app calls `/api/recipes.json` and `/api/recipes/:id.json`. Vite proxies `/api` to `https://www.afrihost.com/assessments/2603-fe-mid`, so a browser extension is not required during local development.
 
 ## Production check
 
