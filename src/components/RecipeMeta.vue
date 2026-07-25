@@ -12,7 +12,7 @@ const cookingTime = computed(() => {
 
 <template>
   <p v-if="calories || cookingTime" class="recipe-meta">
-    <span v-if="calories"><span aria-hidden="true">♨</span> {{ calories.amount }} {{ calories.unit }}</span>
+    <span v-if="calories"><span aria-hidden="true">♨</span> {{ calories.amount }} {{ calories.label }}</span>
     <span v-if="calories && cookingTime" aria-hidden="true">•</span>
     <span v-if="cookingTime"><span aria-hidden="true">◷</span> {{ cookingTime }}</span>
   </p>

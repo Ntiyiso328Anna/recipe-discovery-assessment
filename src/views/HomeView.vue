@@ -8,12 +8,16 @@ import LoadingState from '../components/LoadingState.vue'
 import RecipeCard from '../components/RecipeCard.vue'
 import { useRecipeStore } from '../stores/recipes'
 import './home.css'
+import './home-final.css'
 
 const store = useRecipeStore()
 const selectedCategory = ref('Breakfast')
 const categories = ['Breakfast', 'Lunch', 'Dinner']
 const recipes = computed(() => store.recipes)
-const featuredRecipes = computed(() => recipes.value.slice(0, 2))
+const featuredCards = [
+  { title: 'Asian white noodle with extra seafood', author: 'James Spader', time: '20 Min', variant: 'seafood' },
+  { title: 'Healthy food with fresh ingredients', author: 'Olivia', time: '20 Min', variant: 'fresh' }
+]
 
 onMounted(() => store.loadRecipes())
 </script>
@@ -24,10 +28,9 @@ onMounted(() => store.loadRecipes())
     <section class="home-section" aria-labelledby="featured-heading">
       <div class="home-section__heading"><h2 id="featured-heading">Featured</h2><button type="button">See All</button></div>
       <div class="featured-list">
-        <article v-for="recipe in featuredRecipes" :key="recipe.id" class="featured-card">
-          <img :src="recipe.images?.find((image) => image.mime === 'image/webp')?.url || recipe.images?.[0]?.url" :alt="recipe.title" />
-          <div class="featured-card__shade"></div>
-          <div class="featured-card__content"><h3>{{ recipe.title }}</h3><span>◷ {{ recipe.meta?.cooking_time ? `${Math.round(recipe.meta.cooking_time / 60)} Min` : '' }}</span></div>
+        <article v-for="card in featuredCards" :key="card.title" class="featured-card" :class="`featured-card--${card.variant}`">
+          <span class="featured-card__art" aria-hidden="true"></span>
+          <div class="featured-card__content"><h3>{{ card.title }}</h3><div><span class="featured-card__author">● {{ card.author }}</span><span>◷ {{ card.time }}</span></div></div>
         </article>
       </div>
     </section>
