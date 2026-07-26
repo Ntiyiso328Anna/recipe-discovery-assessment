@@ -1,2 +1,119 @@
-@font-face{font-family:SofiaPro;src:url('./assets/fonts/Sofia Pro Regular Az.otf')}@font-face{font-family:SofiaPro;src:url('./assets/fonts/Sofia Pro Semi Bold Az.otf');font-weight:600}@font-face{font-family:SofiaPro;src:url('./assets/fonts/Sofia Pro Bold Az.otf');font-weight:700}
-*{box-sizing:border-box}body{margin:0;background:#e9eeed;color:#113238;font-family:SofiaPro,Arial,sans-serif}button,a{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.app-shell{max-width:375px;min-height:100vh;margin:auto;background:#fff;overflow:hidden}.home-view{padding:30px 22px 87px;min-height:100vh}.home-header{display:flex;align-items:center;position:relative;margin-bottom:29px}.home-header p{position:absolute;top:-12px;left:0;margin:0;color:#607d82;font-size:9px}.home-header h1{font-size:20px;line-height:1;margin:4px 0 0;font-weight:700}.home-header button{margin-left:auto;border:0;background:none;font-size:16px}.section-title{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px}.section-title h2,.ingredients h2,.instructions h2{font-size:17px;line-height:1;margin:0;font-weight:700}.section-title a{font-size:10px;color:#63b2ae}.feature-scroll{display:flex;gap:13px;overflow:visible;width:calc(100% + 22px)}.feature-card{width:254px;height:165px;padding:22px 16px;border-radius:15px;color:#fff;flex:none;display:flex;flex-direction:column;justify-content:flex-end;font-size:17px;background-size:cover;background-position:center}.feature-card b{line-height:1.1;max-width:180px}.feature-card span{font-size:12px;margin-top:14px}.coral{background:linear-gradient(90deg,#69babe 0 58%,transparent 58%),url('https://www.afrihost.com/assessments/2603-fe-mid/images/1-large.webp') right/58% 100% no-repeat}.teal{background:linear-gradient(90deg,#69babe 0 50%,transparent 50%),url('https://www.afrihost.com/assessments/2603-fe-mid/images/2-small.webp') right/50% 100% no-repeat}.featured{margin-bottom:31px}.chips{display:flex;gap:10px;margin-bottom:31px}.chips button{border:0;background:#f1f5f5;border-radius:24px;padding:11px 21px;color:#123238;font-size:13px}.chips .selected{background:#6dbdbc;color:#fff}.popular-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.recipe-card{display:block;min-width:0}.recipe-card img{display:block;width:100%;height:137px;border-radius:16px;object-fit:cover}.card-copy{padding:11px 0}.card-copy strong{display:block;color:#15373d;font-size:14px;line-height:1.2;min-height:34px}.card-copy span{font-size:11px;color:#8b9da3}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(375px,100%);height:80px;background:#fff;border-radius:20px 20px 0 0;box-shadow:0 -1px 4px #d5e0df33;display:flex;align-items:center;justify-content:space-between;padding:16px 25px 10px;z-index:5}.nav-item{display:grid;justify-items:center;color:#a1b0c1;font-size:22px;line-height:17px;min-width:30px}.nav-item small{font-size:8px;margin-top:8px}.nav-item.active{color:#69bdbb}.create-button{position:absolute;left:50%;top:-25px;transform:translateX(-50%);width:54px;height:54px;border:7px solid #fff;border-radius:50%;background:#07363a;color:#fff;font-size:23px;box-shadow:0 5px 11px #1a4e4e44}.hero{height:232px;position:relative;background:#eef1ef}.hero img{width:100%;height:100%;object-fit:cover}.round-button{position:absolute;top:16px;width:29px;height:29px;border:0;border-radius:9px;background:#fff;color:#577071;display:grid;place-items:center;font-size:19px;line-height:1}.favorite{right:17px;font-size:20px}.hero .round-button:first-of-type{left:17px}.recipe-sheet{position:relative;margin-top:-19px;border-radius:20px 20px 0 0;background:#fff;padding:12px 16px 30px;min-height:650px}.handle{height:3px;width:34px;border-radius:3px;background:#d9e3e2;margin:0 auto 17px}.recipe-title{display:flex;gap:12px;justify-content:space-between}.recipe-title h1{font-size:17px;line-height:1.1;margin:0;max-width:215px}.recipe-title p{font-size:8px;color:#89a0a0;margin:7px 0}.recipe-title>span{font-size:8px;color:#86a0a0;white-space:nowrap}.description{font-size:9px;line-height:1.45;color:#688083;margin:11px 0}.nutrition{background:#f4f7f7;border-radius:7px;display:grid;grid-template-columns:repeat(4,1fr);padding:9px 5px;margin:12px 0 15px}.nutrition div{text-align:center;border-right:1px solid #dce5e5}.nutrition div:last-child{border:0}.nutrition b{display:block;font-size:9px}.nutrition span{color:#8ca0a0;font-size:7px}.nutrient-icon{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7eaaaa;margin-right:3px}.tabs{display:flex;border-radius:7px;background:#edf3f2;padding:2px;margin-bottom:16px}.tabs button{border:0;flex:1;padding:8px;background:transparent;border-radius:5px;font-size:9px;font-weight:600;color:#567072}.tabs .active{background:#073b3d;color:#fff}.ingredient-heading{display:flex;align-items:baseline;gap:5px;margin-bottom:8px}.ingredient-heading span{font-size:8px;color:#9aabab}.ingredients h2,.instructions h2{margin-bottom:9px}.ingredient{display:flex;align-items:center;gap:9px;padding:8px;margin-bottom:7px;border:1px solid #edf1f0;border-radius:7px;box-shadow:0 2px 5px #d9e2e144;font-size:9px}.ingredient-dot{width:22px;height:22px;border-radius:50%;background:#f3f6f6;display:block}.ingredient-dot.leaf{background:#eef5dd}.ingredient-dot.bowl{background:#f8e8cd}.ingredient-dot.seasoning{background:#eee1cf}.ingredient-dot.tomato{background:#f5dbdd}.ingredient-dot.pepper{background:#e9e1ec}.ingredient small{margin-left:auto;color:#7d9493;font-size:8px}.instructions p{font-size:9px;line-height:1.5;color:#60777a}.instructions p b{color:#367f76}.creator{display:flex;align-items:center;gap:8px;margin:20px 0 17px}.avatar{width:28px;height:28px;border-radius:50%;background:#e9b2a0;color:white;display:grid;place-items:center;font-size:10px;font-weight:700}.creator div{display:grid}.creator small{font-size:8px;color:#91a2a2}.creator b{font-size:9px}.creator p{margin:2px 0;font-size:8px;color:#869a9a}.related{display:flex;gap:9px;overflow:hidden}.related .recipe-card{width:74px;flex:none}.related .recipe-card img{height:56px}.related .card-copy{padding-top:4px}.related .card-copy strong{font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:0}.related .card-copy span{font-size:7px}.loading{padding:40px;text-align:center;color:#769191;font-size:13px}@media(min-width:376px){.bottom-nav{position:absolute}.app-shell{box-shadow:0 0 40px #cbd3d1}}
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('./assets/fonts/Sofia Pro Regular Az.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('./assets/fonts/Sofia Pro Medium Az.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('./assets/fonts/Sofia Pro Semi Bold Az.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('./assets/fonts/Sofia Pro Bold Az.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('./assets/fonts/Sofia Pro Black Az.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-family: 'Sofia Pro', Arial, sans-serif;
+  color: #12343a;
+  background: #f2f4f3;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #e9eeed;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:where(a, button):focus-visible {
+  outline: 3px solid rgba(106, 189, 188, 0.55);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.app-shell {
+  position: relative;
+  width: 100%;
+  max-width: 375px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    max-width: 375px;
+    margin: 32px auto;
+    border-radius: 24px;
+    box-shadow: 0 12px 44px rgba(31, 61, 64, 0.14);
+    overflow: clip;
+  }
+}

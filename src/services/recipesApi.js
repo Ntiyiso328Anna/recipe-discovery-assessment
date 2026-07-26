@@ -12,6 +12,9 @@ export async function getRecipes() {
 }
 
 export async function getRecipe(id) {
-  const data = await request(`/${encodeURIComponent(id)}.json`, 'Unable to load this recipe. Please try again.')
+  const data = await request(
+    `/${encodeURIComponent(id)}.json`,
+    'Unable to load this recipe. Please try again.'
+  )
   return data.recipe ?? null
 }

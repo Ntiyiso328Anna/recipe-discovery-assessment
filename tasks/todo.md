@@ -28,6 +28,6 @@
 
 ## Stage 4 - Completion
 
-- [ ] Review keyboard, focus and image alternative text behaviour.
-- [ ] Run a final production build.
-- [ ] Review Git status and commit the assessment changes.
+- [x] Review keyboard, focus and image alternative text behaviour.
+- [x] Run a final production build.
+- [x] Review Git status and commit the assessment changes.

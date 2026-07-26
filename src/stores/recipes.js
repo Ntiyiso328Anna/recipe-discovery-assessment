@@ -32,8 +32,13 @@ export const useRecipeStore = defineStore('recipes', {
       this.selectedRecipe = null
 
       try {
-        this.selectedRecipe = await getRecipe(id)
-        const existingIndex = this.recipes.findIndex((recipe) => recipe.id === this.selectedRecipe.id)
+        const selectedRecipe = await getRecipe(id)
+        if (!selectedRecipe) return null
+
+        this.selectedRecipe = selectedRecipe
+        const existingIndex = this.recipes.findIndex(
+          (recipe) => recipe.id === this.selectedRecipe.id
+        )
         if (existingIndex >= 0) this.recipes.splice(existingIndex, 1, this.selectedRecipe)
         return this.selectedRecipe
       } catch (error) {
