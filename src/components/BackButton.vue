@@ -2,15 +2,7 @@
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const goBack = () => {
-  const previousRoute = window.history.state?.back
-  if (previousRoute) {
-    router.back()
-    return
-  }
-
-  router.push({ name: 'home' })
-}
+const goBack = () => (window.history.length > 1 ? router.back() : router.push('/'))
 </script>
 
 <template>
